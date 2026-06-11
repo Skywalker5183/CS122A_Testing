@@ -25,13 +25,17 @@ add_executable(cs122_demo
      src/lvgl_arc_label.cpp
      src/lvgl_heart_rate.cpp
      src/lvgl_demo_widgets.cpp
-     src/Back_button.c
-     src/Canvas.c
-     src/Drawing_app.c
-     src/Notepad.c
-     src/Phone_gui.c
-     src/Texting_app.c
+     src/Back_button.cpp
+     src/Canvas.cpp
+     src/Drawing_app.cpp
+     src/Notepad.cpp
+     src/Phone_gui.cpp
+     src/Texting_app.cpp
      # src/Weather_app.c
+     assets/Back_button_logo.c
+     assets/Drawing_logo.c
+     assets/Notepad_logo.c
+     assets/Text_logo.c
 )
 
 # pull in common dependencies and additional spi hardware support

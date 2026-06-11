@@ -1,6 +1,6 @@
 #pragma once
 
-#include "<lvgl.h>"
+#include "../lvgl.h"
 #include "weather_app.h"
 #include "Notepad.h"
 #include "Texting_app.h"

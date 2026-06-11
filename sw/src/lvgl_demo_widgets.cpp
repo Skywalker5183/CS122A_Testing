@@ -1,4 +1,5 @@
 #include <lvgl_demo_widgets.h>
+#include "Phone_gui.h"
 #include "lv_conf.h"
 #include <lvgl.h>
 
@@ -11,7 +12,7 @@ namespace ucr { namespace bcoe { namespace cs { namespace cs122 {
 #endif
 
 uint32_t LVGL_DemoWidgets::run() {
-    lv_demo_widgets();
+    lv_phone_gui_widgets();
     return loop();
 }
 

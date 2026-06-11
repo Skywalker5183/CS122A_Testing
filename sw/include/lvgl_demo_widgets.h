@@ -2,6 +2,7 @@
 #define _LVGL_CLOCK_H_
         
 #include "demos/lv_demos.h"
+#include "Phone_gui.h"
 #include <cs122_app.h>
 
 namespace ucr { namespace bcoe { namespace cs { namespace cs122 {
