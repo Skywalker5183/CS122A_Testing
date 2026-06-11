@@ -4,6 +4,8 @@
 #include "lvgl_demo_widgets.h"
 #include "lvgl_touch.h"
 #include "Phone_gui.h"
+#include <stdio.h>
+#include "wifi_config.h"
 
 #include <lvgl.h>
 
@@ -13,6 +15,9 @@
 #include <pico/time.h>
 #include <hardware/spi.h>
 #include <pico/cyw43_arch.h>
+
+uint32_t Country = CYW43_COUNTRY_USA; // Append country to the end (replace USA if not USA)
+uint32_t AuthType = CYW43_AUTH_WPA2_AES_PSK; // Other Auth types: CYW43_AUTH_OPEN, CYW43_AUTH_WPA_TKIP_PSK, CYW43_AUTH_WPA2_MIXED_PSK
 
 /*Return the elapsed milliseconds since startup.
  *It needs to be implemented by the user*/
@@ -54,11 +59,45 @@ void cs122_flush_cb_partial(lv_display_t * disp, const lv_area_t * area, uint8_t
     lv_display_flush_ready(disp);
 }
 
+// void initWifi(const char *ssid, const char *password, uint32_t country, uint32_t auth)
+// {
+//     // Initialize onboard wifi chip with specified country settings
+//     // Variations:
+//     // cyw43_arch_init () - initialize with default country
+//     if (cyw43_arch_init_with_country(country))
+//     {
+//         printf("Wi-Fi init failed\n");
+//         return;
+//     }
+
+//     printf("Wi-Fi initialized\n");
+    
+//     // Enable client mode
+//     // Variations:
+//     // cyw43_arch_enable_ap_mode(ssid, password, auth) - enables server mode (access point)
+//     cyw43_arch_enable_sta_mode();
+
+//     // Connect to a network or timeout in 10 seconds.
+//     // Variations:
+//     // cyw43_arch_wifi_connect_timeout_ms(ssid, password, auth, waitTime)
+//     // cyw43_arch_wifi_connect_async(ssid, password, auth)
+//     if (cyw43_arch_wifi_connect_blocking(ssid, password, auth))
+//     {
+//         printf("Wi-Fi connection failed\n");
+//         return;
+//     }
+
+//     printf("Wi-Fi connected\n");
+// }
+
 int main(void) {
     // Init drivers
 	stdio_init_all();
 	cyw43_arch_init();
     adc_init();
+
+    // Wifi
+    //initWifi(ssidName, ssidPassword, Country, AuthType);
 
     ucr::bcoe::SPIDisplay spi_display(480, 272, 10000000, 20);
 	spi_display.begin();
