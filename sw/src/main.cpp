@@ -3,6 +3,7 @@
 #include "lv_conf.h"
 #include "lvgl_demo_widgets.h"
 #include "lvgl_touch.h"
+#include "Phone_gui.h"
 
 #include <lvgl.h>
 
@@ -62,8 +63,9 @@ int main(void) {
     ucr::bcoe::SPIDisplay spi_display(480, 272, 10000000, 20);
 	spi_display.begin();
 	spi_display.clear();
-
-    ucr::bcoe::cs::cs122::LVGL_DemoWidgets app(&spi_display, cs122_flush_cb_partial, cs122_get_millis);
+    lv_phone_gui_widgets();
+    //ucr::bcoe::cs::cs122::Phone_app app(&spi_display, cs122_flush_cb_partial, cs122_get_millis);
+    lv_phone_gui_widgets();
     touch_init(26, 21, 27, 22);
-    app.run();
+    //app.run();
 }

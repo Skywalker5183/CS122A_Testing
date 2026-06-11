@@ -4,7 +4,8 @@ FROM ubuntu:24.04
 RUN apt upgrade && apt update
 
 # Get HW build tools
-RUN apt install -y yosys nextpnr-ice40 fpga-icestorm iverilog
+RUN apt-get update && apt-get install -y yosys nextpnr-ecp5 fpga-icestorm iverilog git fpga-trellis fpga-trellis-database libusb-1.0-0-dev pkg-config
+CMD ["/bin/bash"]
 
 # Get SW build tools & PICO SDK
 RUN apt install -y git openocd gdb-multiarch
@@ -27,4 +28,4 @@ ENV PICO_SDK_PATH=/pico/pico-sdk
 RUN mkdir -p /myprojects
 WORKDIR /myprojects
 
-ENTRYPOINT [ "tail", "-f", "/dev/null"]
+# ENTRYPOINT [ "tail", "-f", "/dev/null"]
