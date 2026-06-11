@@ -15,9 +15,13 @@
 #include <pico/time.h>
 #include <hardware/spi.h>
 #include <pico/cyw43_arch.h>
+// Wi-Fi and lwIP MUST be included last and wrapped in extern "C"
+// extern "C" {
+// #include <pico/cyw43_arch.h>
+// }
 
-uint32_t Country = CYW43_COUNTRY_USA; // Append country to the end (replace USA if not USA)
-uint32_t AuthType = CYW43_AUTH_WPA2_AES_PSK; // Other Auth types: CYW43_AUTH_OPEN, CYW43_AUTH_WPA_TKIP_PSK, CYW43_AUTH_WPA2_MIXED_PSK
+// uint32_t Country = CYW43_COUNTRY_USA; // Append country to the end (replace USA if not USA)
+// uint32_t AuthType = CYW43_AUTH_WPA2_AES_PSK; // Other Auth types: CYW43_AUTH_OPEN, CYW43_AUTH_WPA_TKIP_PSK, CYW43_AUTH_WPA2_MIXED_PSK
 
 /*Return the elapsed milliseconds since startup.
  *It needs to be implemented by the user*/

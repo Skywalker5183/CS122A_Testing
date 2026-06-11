@@ -31,11 +31,13 @@ add_executable(cs122_demo
      src/Notepad.cpp
      src/Phone_gui.cpp
      src/Texting_app.cpp
-     # src/Weather_app.c
+     src/Weather_app.cpp
      assets/Back_button_logo.c
      assets/Drawing_logo.c
      assets/Notepad_logo.c
      assets/Text_logo.c
+     assets/Weather_app_background.c
+     assets/weather_logo.c
 )
 
 # pull in common dependencies and additional spi hardware support

@@ -31,7 +31,10 @@
 #include <pico/binary_info.h>
 #include <pico/time.h>
 #include <hardware/spi.h>
-#include <pico/cyw43_arch.h>
+
+// extern "C" {
+// #include <pico/cyw43_arch.h>
+// }
 
 /* ------------------------------------------------------------ */
 /*				Oledrgb Definitions					*/
